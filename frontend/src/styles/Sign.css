@@ -1,0 +1,117 @@
+/* Overlay (background) */
+.signin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal */
+.signin-modal {
+  background: #fff;
+  padding: 2rem;
+  width: 350px;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Heading */
+.signin-modal h2 {
+  margin-bottom: 1.5rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Input Label */
+.signin-modal label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Input Field */
+.signin-modal input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 1.5rem;
+  outline: none;
+  font-size: 14px;
+}
+
+.signin-modal input:focus {
+  border-bottom: 1px solid #8b6f3d; /* AJIO gold */
+}
+
+/* Continue Button */
+.continue-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #8b6f3d; /* AJIO gold */
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.continue-btn:hover {
+  background-color: #6d542f;
+}
+
+/* Terms Text */
+.terms {
+  margin-top: 1rem;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.terms a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+/* Email Warning Note */
+.email-note {
+  margin-top: 1.5rem;
+  font-size: 12px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  color: #444;
+}
+
+.email-note a {
+  color: #0073e6;
+  text-decoration: none;
+}

@@ -1,0 +1,122 @@
+.address-form-overlay {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 40%;
+  max-width: 420px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -3px 0 8px rgba(0,0,0,0.15);
+  padding: 20px 25px;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease forwards;
+  z-index: 1000;
+  font-family: "Arial", sans-serif;
+}
+
+@keyframes slideIn {
+  from { right: -100%; }
+  to { right: 0; }
+}
+
+.address-form {
+  position: relative;
+}
+
+.address-form h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* ✅ Labels for inputs */
+.address-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 0 4px;
+  color: #333;
+}
+
+.address-form input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.address-form input:focus {
+  border: 1px solid #2e6cf6;
+  outline: none;
+}
+
+/* Radio buttons */
+.type-select {
+  margin: 15px 0;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.type-select label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Action buttons */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.actions button:first-child {
+  background: #2e6cf6;
+  color: white;
+}
+
+.actions button:last-child {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Close (X) button */
+.close-btn {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+
+  display: inline;     /* ✅ ensures no full-width */
+  background: none;
+  border: none;
+
+  font-size: 22px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #000;
+}

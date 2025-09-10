@@ -1,0 +1,208 @@
+// menuData.js
+
+export const menuData = {
+  men: {
+    left: [
+      "Clothing",
+      "Footwear",
+      "Accessories",
+      "All That’s New",
+      "AJIO Global",
+      "Plus Size",
+      "Night & Loungewear",
+      "Grooming|new",
+      "Ethnic & Festive|hot",
+    ],
+    right: {
+      "Western Wear": [
+        "Jackets & Coats",
+        "Jeans",
+        "Shirts",
+        "shorts",
+        "Sweatshirts-Hoodies",
+        "Track-Pants",
+        "T-Shirts",
+      ],
+      Footwear: [
+        "Casual Shoes",
+        "Flip-Flops-Slippers",
+        "formal-shoes",
+        "Sandals",
+        "Sneakers",
+        "sports-shoes",
+      ],
+      Accessories: [
+        "Backpacks",
+        "bags-wallets",
+        "Belts",
+        "caps-hats",
+        "Socks",
+        "sunglasses-frames",
+        "Watches",
+      ],
+      "Precious Jewellery": [
+        "gold-and-silver-coins",
+        "gold-and-diamond-jewellery",
+        "silver-jewellery",
+      ],
+      Innerwear: ["Briefs", "trunks-boxers", "Vests"],
+      Featured: [
+        "Bags Under 1499",
+        "Footwear Under 1499",
+        "Jeans Under 1199",
+        "Shorts & 3/4ths Under 699",
+      ],
+      "Festive Edits": ["Diwali Kurta", "Dhotis", "Readymade Dhotis", "Ramraj Dhotis"],
+    },
+  },
+
+  women: {
+    left: [
+      "Clothing",
+      "Footwear",
+      "Accessories",
+      "All That’s New",
+      "AJIO Global",
+      "Indie",
+      "Plus Size",
+      "Lingerie & Innerwear",
+      "Ethnic & Festive|hot",
+    ],
+    right: {
+      "Western Wear": [
+        "Dresses",
+        "tops-tees",
+        "jeans-jeggings",
+        "Trousers & Pants",
+        "jackets-coats",
+        "sweatshirts-hoodies",
+      ],
+      "Ethnic Wear": [
+        "Kurtas & Kurtis",
+        "Salwars & Churidars",
+        "Sarees",
+        "Dress Materials",
+        "Dupattas",
+      ],
+      Footwear: [
+        "Flats",
+        "Heels",
+        "Casual Shoes",
+        "Sports Shoes",
+        "Boots",
+      ],
+      Accessories: [
+        "Handbags",
+        "Sling Bags",
+        "Wallets",
+        "Belts",
+        "Sunglasses",
+        "Jewellery",
+      ],
+      Featured: [
+        "Kurta Sets Under 999",
+        "Sarees Under 1499",
+        "Western Wear Under 799",
+      ],
+    },
+  },
+
+  kids: {
+    left: [
+      "Boys Clothing",
+      "Girls Clothing",
+      "Footwear",
+      "Toys & Games",
+      "All That’s New",
+      "AJIO Global",
+      "Infants (0-2 Yrs)",
+      "Character Shop",
+    ],
+    right: {
+      "Boys Clothing": [
+        "T-Shirts",
+        "Shirts",
+        "Jeans & Trousers",
+        "Shorts",
+        "Ethnic Wear",
+      ],
+      "Girls Clothing": [
+        "Dresses",
+        "Tops",
+        "Jeans & Leggings",
+        "Skirts",
+        "Ethnic Wear",
+      ],
+      Footwear: [
+        "Casual Shoes",
+        "School Shoes",
+        "Sandals & Flip-Flops",
+        "Sports Shoes",
+      ],
+      Toys: ["Soft Toys", "Educational Toys", "Board Games", "Outdoor Games"],
+      Featured: [
+        "Boys Wear Under 499",
+        "Girls Wear Under 599",
+        "Footwear Under 799",
+      ],
+    },
+  },
+
+  beauty: {
+    left: [
+      "Makeup",
+      "Skincare",
+      "Haircare",
+      "Fragrances",
+      "Bath & Body",
+      "Men’s Grooming",
+      "Beauty Tools",
+      "All That’s New",
+    ],
+    right: {
+      Makeup: [
+        "Lipstick",
+        "Lip Gloss",
+        "Foundation",
+        "Concealer",
+        "Mascara",
+        "Eyeliner",
+      ],
+      Skincare: [
+        "Moisturisers",
+        "Cleansers",
+        "Face Masks",
+        "Sunscreen",
+      ],
+      Haircare: [
+        "Shampoo",
+        "Conditioner",
+        "Hair Oil",
+        "Styling Products",
+      ],
+      Fragrances: ["Perfumes", "Deodorants", "Body Mists"],
+      "Bath & Body": ["Soaps", "Body Wash", "Hand Cream"],
+      Featured: ["Makeup Under 499", "Skincare Under 699", "Fragrance Under 999"],
+    },
+  },
+
+  "home-kitchen": {
+    left: [
+      "Bed Linen",
+      "Home Decor",
+      "Kitchenware",
+      "Dining",
+      "Storage & Organisation",
+      "Furniture",
+      "All That’s New",
+    ],
+    right: {
+      "Bed Linen": ["Bedsheets", "Pillow Covers", "Blankets", "Quilts"],
+      "Home Decor": ["Wall Art", "Clocks", "Curtains", "Cushions", "Rugs"],
+      Kitchenware: ["Cookware", "Storage Jars", "Kitchen Tools"],
+      Dining: ["Dinnerware", "Serveware", "Glassware"],
+      Furniture: ["Sofas", "Chairs", "Tables", "Storage Units"],
+      Featured: ["Bedsheets Under 999", "Decor Under 499", "Kitchen Essentials Under 799"],
+    },
+  },
+};

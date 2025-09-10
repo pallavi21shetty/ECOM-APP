@@ -1,0 +1,127 @@
+.shipping-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* left side wider */
+  gap: 20px;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+  width:80%;
+  margin: 20px auto;
+  padding-top: 120px;
+}
+
+/* LEFT SECTION */
+.left-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* two equal columns */
+  gap: 20px;
+  height: fit-content;
+}
+
+.selected-address {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.selected-address strong {
+  font-size: 15px;
+}
+
+.selected-address button {
+  margin-top: 10px;
+  border: none;
+  background: none;
+  color: #007aff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* COD + Delivery row */
+.cod-delivery-row {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.cod-note{
+  color: green;
+}
+
+.delivery-note h3 {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+}
+
+/* Products */
+.delivery-section {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.delivery-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.delivery-item img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.delivery-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* RIGHT SECTION */
+.order-summary {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+  height: fit-content;
+  font-size: 14px;
+}
+
+.order-summary h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.order-summary p {
+  margin: 6px 0;
+}
+
+.order-summary h4 {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.proceed-btn {
+  width: 100%;
+  background: #b38e5d;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.proceed-btn:hover {
+  background: #a47d4b;
+}

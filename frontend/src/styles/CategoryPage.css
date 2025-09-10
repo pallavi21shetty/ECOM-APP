@@ -1,0 +1,282 @@
+
+/* ---------------------- CATEGORY PAGE ---------------------- */
+.category-page {
+  padding: 25px 60px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  max-width: 1200px;
+  margin: 0 auto;
+    padding-top: 120px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+}
+.breadcrumb a {
+  color: #555;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------- CATEGORY / BRAND HEADER ---------------------- */
+.category-header {
+  text-align: center;
+  margin: 10px auto 20px auto;
+  max-width: 800px;
+}
+.category-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+.category-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---------------------- LAYOUT ---------------------- */
+.category-layout {
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+}
+
+/* ---------------------- SIDEBAR FILTER ---------------------- */
+.filters {
+  width: 260px;
+  border-right: 1px solid #e5e5e5;
+  padding-right: 20px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.filters-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #111;
+}
+.filter-section {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  padding: 8px 0;
+}
+.filter-options {
+  margin-top: 6px;
+  padding-left: 5px;
+}
+.filter-options label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 4px 0;
+  color: #444;
+  cursor: pointer;
+}
+.filter-options input {
+  margin-right: 8px;
+}
+
+/* ---------------------- PRODUCTS SECTION ---------------------- */
+.products-section {
+  flex: 1;
+  padding-left: 10px;
+}
+.products-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #444;
+  gap: 20px;
+}
+.products-top .items-count {
+  font-weight: 500;
+  font-size: 14px;
+  color: #222;
+}
+.products-top select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #fff;
+}
+
+/* Grid Switcher */
+.grid-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #555;
+}
+.grid-switcher button {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 3px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.grid-switcher button.active,
+.grid-switcher button:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* ---------------------- PRODUCT GRID ---------------------- */
+.products-grid {
+  display: grid;
+  gap: 20px;
+}
+.products-grid.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.products-grid.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.products-grid.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.no-products {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 40px 0;
+}
+
+/* ---------------------- PRODUCT CARD ---------------------- */
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.product-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f3f3f3;
+  padding-bottom: 8px;
+}
+
+/* ---------------------- PRODUCT TEXT ---------------------- */
+.product-card .brand {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c45500;   /* orange AJIO style */
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.product-card h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  min-height: 36px;
+  line-height: 18px;
+  overflow: hidden;
+}
+.product-card .rating {
+  display: inline-block;     /* ✅ shrink background to text */
+  font-size: 13px;
+  color: #fff;               /* white text */
+  background-color: #28a745; /* green background */
+  padding: 2px 6px;          /* some spacing */
+  border-radius: 3px;        /* rounded corners */
+   margin: 0 0 6px 0;
+}
+
+
+/* ---------------------- PRICE BLOCK ---------------------- */
+.price-block {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.price-block .offer-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+.price-block .mrp {
+  font-size: 13px;
+  color: #777;
+  text-decoration: line-through;
+}
+.price-block .discount {
+  font-size: 13px;
+  color: #d32f2f;   /* red discount */
+  font-weight: 600;
+}
+
+/* ---------------------- PRODUCT BADGES ---------------------- */
+.product-card .tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: black;
+  color: white;
+  padding: 3px 7px;
+  font-size: 11px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.product-card .tag.new {
+  background: #d32f2f;
+}
+.product-card .tag.bestseller {
+  background: #388e3c;
+}
+
+/* ---------------------- HEADER INSIDE PRODUCTS ---------------------- */
+.products-section .category-header {
+  text-align: center;
+  margin: 0 auto 25px auto;
+  max-width: 800px;
+}
+.products-section .category-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+.products-section .category-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+

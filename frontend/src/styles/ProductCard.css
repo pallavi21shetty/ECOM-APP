@@ -1,0 +1,113 @@
+
+/* Product Card Wrapper */
+.product-card {
+  position: relative;
+  text-align: center;
+  margin: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* ✅ Quick View - AJIO Style */
+.quick-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(158, 154, 154, 0.6);
+  color: white;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.image-container:hover .quick-view {
+  opacity: 1;
+}
+
+.quick-view a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Rating Badge - like AJIO */
+.rating {
+  display: inline-block;
+  background: #2e7d32; /* Green badge */
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: #fff;
+  margin-left: 4px;
+}
+
+/* Price Block */
+.price-block {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.offer-price {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mrp {
+  text-decoration: line-through;
+  margin-left: 6px;
+  color: gray;
+  font-size: 13px;
+}
+
+.discount {
+  margin-left: 6px;
+  color: green;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+
+/* Remove underline & reset link color */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Makes the whole card clickable */
+}
+
+/* Optional: hover effect */
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}

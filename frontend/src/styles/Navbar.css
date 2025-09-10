@@ -1,0 +1,353 @@
+/* .container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+} */
+
+/* ================= Navbar Wrapper ================= */
+.ajio-navbar {
+  font-family: "Roboto", Arial, sans-serif;  /* closest to AJIO’s font */
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+  position: fixed ;
+  width: 100%; 
+    z-index: 9999;  
+}
+
+
+/* ================= Top Strip ================= */
+.top-strip {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6px 40px;
+  font-size: 12px;
+  color: #555;
+  gap: 16px;
+}
+.top-strip a { text-decoration: none; color: #555; }
+.top-strip a:hover { text-decoration: underline; }
+
+.ajio-luxe {
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  padding: 5px 12px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.ajio-luxe:hover { opacity: 0.9; }
+
+.profile-link { font-weight: 600; }
+.signout-btn { background: none; border: none; cursor: pointer; font-size: 12px; color: #444; }
+.signout-btn:hover { text-decoration: underline; }
+
+/* ================= Main Navbar ================= */
+.main-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background-color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+   height: 38px;
+    margin-right: 40px;
+    margin-left: 40px;
+   }
+
+/* ================= Categories ================= */
+.categories ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.categories li {
+  margin: 0 16px;
+  position: relative;
+}
+.categories a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  padding: 8px 2px;
+  transition: all 0.15s ease;
+}
+.categories a:hover {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+/* ================= Search ================= */
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 40px;
+  max-width: 420px;
+  position: relative;
+}
+.search-bar input {
+  flex: 1;
+  padding: 7px 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 13px;
+  background-color: #fafafa;
+}
+.search-bar button {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  padding: 0 12px;
+  cursor: pointer;
+}
+/* ================= Search Suggestions Dropdown ================= */
+/* ================= Search Suggestions Dropdown ================= */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border-radius: 0 0 6px 6px;
+  z-index: 2000;
+  margin: 0;
+  padding: 0;
+  list-style: none;  /* ✅ removes bullets */
+}
+
+.search-suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f5f5;
+  transition: background 0.2s;
+}
+
+.search-suggestions li:hover {
+  background: #fafafa;
+}
+
+.suggestion-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-text .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.suggestion-text .brand {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ✅ Last row: “View all results” */
+.search-suggestions .view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  color: #111;
+  border-top: 1px solid #eee;
+}
+
+.search-suggestions .view-all img {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.search-suggestions .view-all span {
+  margin-left: auto;
+  font-size: 18px;
+  color: #555;
+}
+
+/* ================= Mega Menu ================= */
+.mega-menu {
+  position: absolute;
+  top: 100%;             
+  left: 50%;                     
+  transform: translateX(-50%);   
+  width: calc(100% - 200px);     
+  background: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  z-index: 1500;
+  max-height: 65vh;
+  overflow-y: auto;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto
+}
+
+/* ================= Mega Top ================= */
+.mega-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mega-top .shop-by {
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+}
+.mega-top-tabs {
+  display: flex;
+  gap: 8px;
+}
+.mega-top-tabs button {
+  border: none;
+  background: #f5f5f5;
+  padding: 6px 14px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+.mega-top-tabs button.active {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+.mega-top-tabs button:hover {
+  background: #eee;
+}
+
+/* ================= Mega Content Layout ================= */
+.mega-content {
+  display: flex;
+  padding: 18px;
+  gap: 24px;
+}
+
+/* ---- Left column ---- */
+.mega-left {
+  width: 200px;
+  background: #fff;  
+  padding: 10px 16px;
+  border-right: 1px solid #eee;
+}
+.mega-left ul { list-style: none; margin: 0; padding: 0; }
+.mega-left li { margin: 10px 0; }
+.mega-left a {
+  text-decoration: none;
+  color: #2c2c2c;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+.mega-left a:hover { color: #000; }
+
+/* ---- Badges ---- */
+.tag {
+  font-size: 9px;
+  font-weight: 700;
+  margin-left: 6px;
+  padding: 1px 5px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+.tag.new { background: #e11d48; color: #fff; } 
+.tag.hot { background: #28a745; color: #fff; } 
+
+/* ---- Right grid ---- */
+.mega-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  
+  gap: 20px 40px;
+}
+.mega-column h4 {
+  font-size: 12px;
+  font-weight: 800;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.mega-column ul { list-style: none; margin: 0; padding: 0; }
+.mega-column li { margin-bottom: 7px; }
+.mega-column a {
+  font-size: 13px;
+  color: #444;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.mega-column a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ================= Scrollbar ================= */
+.mega-menu::-webkit-scrollbar { width: 6px; }
+.mega-menu::-webkit-scrollbar-thumb { background: #bbb; border-radius: 6px; }
+
+/* ================= Brands Grid ================= */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px 20px;
+  padding: 20px;
+}
+.brand-link {
+  font-size: 13px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.brand-link:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ================= Icons ================= */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.circle-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #2c3e50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.circle-icon span {
+  font-size: 20px;
+  color: white;
+}

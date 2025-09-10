@@ -1,0 +1,63 @@
+/* Container for the carousel */
+.carousel-slider {
+  width: 90%;
+  max-width: 1440px; /* adjust according to design */
+  margin: 0 auto;
+  position: relative;
+  padding: 2px;
+}
+
+/* Each slide */
+.carousel-slider .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* optional rounded corners */
+  object-fit: cover;
+}
+
+/* Custom arrows */
+.carousel-slider .custom-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.carousel-slider .custom-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-slider .custom-prev {
+  left: 10px;
+}
+
+.carousel-slider .custom-next {
+  right: 10px;
+}
+
+/* Hide default indicators if you want */
+.carousel-slider .carousel .control-dots {
+  bottom: 15px;
+}
+
+.carousel-slider .carousel .control-dots .dot {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.6);
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  transition: background 0.3s;
+}
+
+.carousel-slider .carousel .control-dots .dot.selected {
+  background: #ff3f6c; /* highlight color for active dot */
+}

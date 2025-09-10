@@ -1,0 +1,28 @@
+.features-section {
+  margin:  0;
+}
+
+.wishlist-icons {
+  display: flex;
+  justify-content: space-between; /* distributes left, center, right */
+  align-items: center;
+  max-width: 900px; /* adjust as needed */
+  margin: 0 auto; /* center the row in page */
+}
+
+.wishlist-icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wishlist-icons .center {
+  margin: 0 auto; /* ensure center icon stays centered */
+}
+
+.wishlist-icons p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}

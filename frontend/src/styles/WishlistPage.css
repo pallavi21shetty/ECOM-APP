@@ -1,0 +1,260 @@
+.wishlist-container {
+  padding: 20px;
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wishlist-title {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: darkslategrey;
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ Force 4 per row */
+  gap: 25px;
+}
+
+.wishlist-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Product image */
+.wishlist-img-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.wishlist-img {
+  width: 100%;
+  height: 300px; /* ✅ Bigger product size */
+  object-fit: cover;
+}
+
+/* Delete icon top-right */
+.delete-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  color: #444;
+  font-size: 14px;
+  transition: 0.2s;
+  z-index: 5;
+}
+.delete-icon:hover {
+  background: #f8d7da;
+  color: #c00;
+}
+
+/* Cart icon bottom-left */
+.cart-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  color: #444;
+  font-size: 16px;
+  transition: 0.2s;
+  z-index: 5;
+}
+.cart-icon:hover {
+  background: #e6f7ff;
+  color: #0077b6;
+}
+
+/* Info Section */
+.wishlist-info {
+  padding: 12px;
+}
+
+.wishlist-title-text {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px 0;
+  line-height: 1.3;
+}
+
+.wishlist-brand {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.wishlist-price {
+  font-size: 14px;
+  font-weight: 600;
+}
+.wishlist-price .mrp {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 6px;
+  font-weight: normal;
+}
+.wishlist-price .discount {
+  color: #d32f2f;
+  margin-left: 6px;
+  font-weight: 500;
+}
+
+/* Out of Stock Overlay */
+.out-of-stock {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 0, 0, 0.9);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+/* 🔹 Empty Wishlist Styling */
+.wishlist-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #333;
+  padding-top: 100px;
+}
+
+.wishlist-empty h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.wishlist-empty p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.continue-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #a67c52; /* Ajio-style gold */
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.continue-btn:hover {
+  background-color: #8c653f;
+}
+
+.wishlist-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.wishlist-icons div {
+  text-align: center;
+  color: #333;
+}
+
+.wishlist-icons p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.wishlist-message-bar {
+  background-color: #0c031ff3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Size Popup Overlay (AJIO Style) */
+.size-popup {
+  position: absolute;
+  top: 10;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(240, 240, 240, 0.9); /* ✅ semi-transparent gray */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  border-radius: 9px;
+  animation: fadeIn 0.3s ease;
+  text-align: center;
+  height: 90px;
+}
+
+/* Header (Select Size + Close) */
+.size-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 240px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #000;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  color: #000;
+}
+
+/* Size buttons */
+.size-options {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.size-btn {
+  border: 1px solid #666;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #fff;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.size-btn:hover {
+  background: black;
+  color: white;
+  border-color: black;
+}

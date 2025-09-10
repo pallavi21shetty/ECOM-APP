@@ -1,0 +1,111 @@
+/* ===== Header Wrapper ===== */
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 50px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Logo ===== */
+.checkout-logo h1 {
+  margin-left: 80px;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* ===== Steps (center) ===== */
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.checkout-steps .step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Step Icon */
+.checkout-steps .step svg {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+/* ===== Active Step ===== */
+.checkout-steps .step.active {
+  color: #000;
+  font-weight: 600;
+}
+.checkout-steps .step.active svg {
+  color: #000;
+}
+
+/* ===== Step Connector Lines ===== */
+.checkout-steps .step::after {
+  content: "";
+  position: absolute;
+  top: 12px;              /* aligns with icon center */
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: #ddd;
+  z-index: -1;
+}
+
+/* remove connector from last step */
+.checkout-steps .step:last-child::after {
+  display: none;
+}
+
+/* ===== Completed Steps ===== */
+.checkout-steps .step.completed {
+  color: #000;
+  font-weight: 600;
+}
+.checkout-steps .step.completed svg {
+  color: #000;
+}
+.checkout-steps .step.completed::after {
+  background: #000; /* dark connector for completed steps */
+}
+
+/* ===== Right-side links ===== */
+.checkout-links {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  margin-right: 150px;
+}
+
+.checkout-links a {
+  text-decoration: none;
+  color: #444;
+}
+
+.checkout-links .ajio-luxe {
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+}

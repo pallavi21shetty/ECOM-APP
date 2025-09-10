@@ -1,0 +1,70 @@
+.homepage {
+  font-family: Arial, sans-serif;
+  padding-top: 80px;
+}
+.perks {
+  background: #f5f5f5;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Full-width banner images */
+.full-width {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Spacing between sections */
+.section {
+  margin-top: 30px;
+}
+
+/* Grid layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Make all grid images consistent */
+.grid-3 img,
+.grid-4 img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+.slider-section {
+  margin: 40px 0;
+}
+
+.slider-header {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#new_deals:hover, #new_deals_img > img:hover{
+    transition: 0.8s;
+    transform: scale(1.03);
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+#ajio_cares:hover{
+    transition: 0.8s;
+    transform: scale(1.03);
+    padding: 5px;
+}
