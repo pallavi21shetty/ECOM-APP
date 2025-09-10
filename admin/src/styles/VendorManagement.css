@@ -1,0 +1,105 @@
+/* src/styles/VendorManagement.css */
+
+.vendor-management {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+/* Empty message */
+.empty {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Styled Table */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.styled-table thead tr {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 12px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.approve {
+  background: #22c55e;
+  color: #fff;
+}
+
+.btn.approve:hover {
+  background: #16a34a;
+}
+
+.btn.reject {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn.reject:hover {
+  background: #dc2626;
+}
+
+/* Status badges */
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #facc15;
+  color: #1e293b;
+}
+
+.status.approved {
+  background: #22c55e;
+  color: #fff;
+}
+
+.status.rejected {
+  background: #ef4444;
+  color: #fff;
+}
