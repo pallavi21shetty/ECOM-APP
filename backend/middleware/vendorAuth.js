@@ -1,15 +1,10 @@
-// backend/middleware/authVendor.js
 import jwt from "jsonwebtoken";
 import Vendor from "../models/Vendor.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
-/**
- * Middleware to authenticate vendor using JWT
- */
 export const vendorAuthMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
-
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ message: "No token provided" });
   }
@@ -19,7 +14,6 @@ export const vendorAuthMiddleware = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     const vendor = await Vendor.findById(decoded.id);
-
     if (!vendor) return res.status(401).json({ message: "Vendor not found" });
 
     req.vendor = {
@@ -27,7 +21,6 @@ export const vendorAuthMiddleware = async (req, res, next) => {
       email: vendor.email,
       role: "vendor",
       name: vendor.name,
-      status: vendor.status,
     };
 
     next();

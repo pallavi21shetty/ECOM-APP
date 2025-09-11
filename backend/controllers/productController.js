@@ -18,39 +18,39 @@ export const getProducts = async (req, res) => {
       limit = 20,
     } = req.query;
 
-    let filter = {};
+    let filter = { status: "approved" }; // ✅ only approved products
 
-    // ✅ Category filter
+    // Category filter
     if (categorySlug)
       filter.categorySlug = new RegExp(`^${categorySlug}$`, "i");
 
-    // ✅ Subcategory filter
+    // Subcategory filter
     if (subcategorySlug)
       filter.subcategorySlug = new RegExp(`^${subcategorySlug}$`, "i");
 
-    // ✅ Gender filter
+    // Gender filter
     if (gender) filter.gender = new RegExp(`^${gender}$`, "i");
 
-    // ✅ Brand filter (supports multiple brands via comma)
+    // Brand filter (supports multiple brands)
     if (brand) {
       const brandList = brand.split(",").map((b) => new RegExp(`^${b}$`, "i"));
       filter.brand = { $in: brandList };
     }
 
-    // ✅ Price range filter
+    // Price range filter
     if (minPrice || maxPrice) {
       filter.price = {};
       if (minPrice) filter.price.$gte = Number(minPrice);
       if (maxPrice) filter.price.$lte = Number(maxPrice);
     }
 
-    // ✅ Discount filter
+    // Discount filter
     if (minDiscount) filter.discountPercent = { $gte: Number(minDiscount) };
 
-    // ✅ Rating filter
+    // Rating filter
     if (minRating) filter.rating = { $gte: Number(minRating) };
 
-    // ✅ Search filter
+    // Search filter
     if (search) {
       filter.$or = [
         { title: new RegExp(search, "i") },
@@ -60,17 +60,15 @@ export const getProducts = async (req, res) => {
       ];
     }
 
-    // ✅ Pagination
+    // Pagination
     const skip = (page - 1) * limit;
 
-    // ✅ Sorting
+    // Sorting
     let sortOption = {};
     if (sort === "lowtohigh") sortOption.price = 1;
     else if (sort === "hightolow") sortOption.price = -1;
     else if (sort === "newest") sortOption.createdAt = -1;
-    else sortOption = {}; // relevance (default)
 
-    // ✅ Query DB
     const products = await Product.find(filter)
       .sort(sortOption)
       .skip(skip)

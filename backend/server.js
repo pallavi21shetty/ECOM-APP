@@ -1,4 +1,3 @@
-// backend/server.js
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -6,15 +5,17 @@ import connectDB from "./config/db.js";
 
 // ---------- Import Routes ----------
 import authRoutes from "./routes/authRoutes.js";             // customer auth
-import productRoutes from "./routes/productRoutes.js";       // products
+import productRoutes from "./routes/productRoutes.js";       // products (customer)
 import wishlistRoutes from "./routes/wishlist.js";           // wishlist
 import cartRoutes from "./routes/cart.js";                   // cart
 
-import vendorAuthRoutes from "./routes/authVendor.js";       // vendor login
+import vendorAuthRoutes from "./routes/vendorAuth.js";       // vendor login
 import vendorRequestRoutes from "./routes/vendorRequests.js";// vendor signup (request)
+import vendorProductRoutes from "./routes/vendorProductRoutes.js"; // vendor products
 
 import adminAuthRoutes from "./routes/adminAuth.js";         // admin login
 import adminVendorRoutes from "./routes/adminVendor.js";     // admin vendor management
+import adminProductRoutes from "./routes/adminProductRoutes.js";  // admin products
 
 dotenv.config();
 const app = express();
@@ -22,7 +23,7 @@ const app = express();
 // ---------- Middleware ----------
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001","http://localhost:3002"], // frontend URLs
+    origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"],
     credentials: true,
   })
 );
@@ -34,17 +35,20 @@ connectDB();
 // ---------- Routes ----------
 // Customer routes
 app.use("/api/auth", authRoutes);             // user authentication
-app.use("/api/products", productRoutes);      // products
+app.use("/api/products", productRoutes);      // customer products
 app.use("/api/wishlist", wishlistRoutes);     // wishlist
 app.use("/api/cart", cartRoutes);             // cart
 
 // Vendor routes
-app.use("/api/vendor/auth", vendorAuthRoutes);         // vendor login
+app.use("/api/vendor/auth", vendorAuthRoutes);          // vendor login
 app.use("/api/vendor-requests", vendorRequestRoutes);  // vendor signup requests
+app.use("/api/vendor/products", vendorProductRoutes);  // vendor products management
 
 // Admin routes
 app.use("/api/admin/auth", adminAuthRoutes);           // admin login
-app.use("/api/admin", adminVendorRoutes);              // vendor requests & vendor management
+app.use("/api/admin/products", adminProductRoutes);    // admin products management
+app.use("/api/admin", adminVendorRoutes);              // vendor requests & management
+
 
 // ---------- Default Route ----------
 app.get("/", (req, res) => {

@@ -11,7 +11,6 @@ const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 export const authMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
-  // ✅ Check for Authorization header
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ message: "No token provided" });
   }
@@ -19,18 +18,15 @@ export const authMiddleware = async (req, res, next) => {
   const token = authHeader.split(" ")[1];
 
   try {
-    // ✅ Verify JWT token
     const decoded = jwt.verify(token, JWT_SECRET);
-
-    // ✅ Fetch the user from DB to ensure valid ObjectId
     const user = await User.findById(decoded.id);
+
     if (!user) {
       return res.status(401).json({ message: "User not found" });
     }
 
-    // ✅ Attach minimal user info to request
     req.user = {
-      id: user._id.toString(), // use this in wishlist routes
+      id: user._id.toString(),
       email: user.email,
       role: user.role,
       name: user.name,
@@ -44,17 +40,36 @@ export const authMiddleware = async (req, res, next) => {
 };
 
 /**
+ * Middleware to allow only vendors
+ */
+export const vendorMiddleware = (req, res, next) => {
+  if (req.vendor?.role === "vendor") {
+    return next();
+  }
+  return res.status(403).json({ message: "Access denied, vendor only" });
+};
+
+/**
+ * Middleware to allow only admins
+ */
+export const adminMiddleware = (req, res, next) => {
+  if (req.user && req.user.id === "admin") {
+    return next();
+  }
+  return res.status(403).json({ message: "Forbidden: Admins only" });
+};
+
+/**
  * Utility function to generate JWT token
- * Call this after login, OTP verification, or registration
  */
 export const generateToken = (user) => {
   return jwt.sign(
     {
-      id: user._id.toString(), // ✅ include MongoDB _id
+      id: user._id.toString(),  // must be ObjectId string
       email: user.email,
       role: user.role,
     },
-    JWT_SECRET,
-    { expiresIn: "7d" }
+    process.env.JWT_SECRET,
+    { expiresIn: "30d" }
   );
 };

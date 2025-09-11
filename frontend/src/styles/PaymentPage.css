@@ -1,76 +1,151 @@
-/* src/styles/PaymentPage.css */
-
-.payment-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px 30px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: "Segoe UI", Arial, sans-serif;
-  padding-top: 120px;
-}
-
-.payment-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.payment-wrapper {
+  width: 80%;
+  margin: auto;
+  font-family: Arial, sans-serif;
   color: #333;
+  padding-top: 150px;
 }
 
-.payment-container h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #444;
+/* Redeem Section */
+.redeem-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-.payment-container p {
+.redeem-card {
+  flex: 1;
+  background: #fff8f0;
+  border: 1px solid #f0c48a;
+  padding: 10px;
+  border-radius: 6px;
   font-size: 14px;
-  margin: 5px 0;
-  color: #555;
 }
 
-.payment-container ul {
+.redeem-card a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.otp-btn {
+  background: #b89a67;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Payment Layout */
+.payment-layout {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Left side payment modes */
+.payment-modes {
+  width: 20%;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.mode-list {
   list-style: none;
   padding: 0;
-  margin: 10px 0 20px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background: #fafafa;
+  margin: 0;
 }
 
-.payment-container ul li {
-  padding: 12px 15px;
+.mode-list li {
+  padding: 12px;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.mode-list li.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Right side details */
+.payment-details {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+}
+
+/* Card form */
+.add-card {
+  flex: 2;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.add-card input,
+.add-card select {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-card .row {
+  display: flex;
+  gap: 10px;
+}
+
+.checkbox {
+  margin: 10px 0;
   font-size: 14px;
-  color: #333;
-}
-
-.payment-container ul li:last-child {
-  border-bottom: none;
-}
-
-.payment-container h4 {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #222;
-  text-align: right;
 }
 
 .pay-btn {
-  display: block;
   width: 100%;
-  padding: 14px;
-  margin-top: 25px;
-  background: #ff3f6c;
-  border: none;
-  border-radius: 8px;
-  color: white;
+  background: #b89a67;
+  color: #fff;
+  padding: 12px;
   font-size: 16px;
-  font-weight: bold;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: bold;
 }
 
-.pay-btn:hover {
-  background: #e1335c;
+/* Order summary */
+.order-summary {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.order-summary h3 {
+  margin-bottom: 15px;
+}
+
+.order-summary p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.order-summary h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #000;
+}
+
+.delivery,
+.shipping {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
 }

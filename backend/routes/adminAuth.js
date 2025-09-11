@@ -6,15 +6,17 @@ import VendorRequest from "../models/VendorRequest.js";
 
 const router = express.Router();
 
+// ✅ Load admin credentials from .env
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
+
 // ------------------------
 // PUBLIC ROUTE: Admin login
 // ------------------------
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
-
-    const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
-    const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
     if (!email || !password) {
       return res.status(400).json({ message: "Email and password required" });
@@ -30,9 +32,10 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
+    // ✅ Sign JWT for admin (id = "admin")
     const token = jwt.sign(
-      { id: "admin", role: "admin", email },
-      process.env.JWT_SECRET,
+      { id: "admin", email },
+      JWT_SECRET,
       { expiresIn: "7d" }
     );
 
@@ -44,9 +47,10 @@ router.post("/login", async (req, res) => {
 });
 
 // ------------------------
-// PROTECTED ROUTES
+// PROTECTED ROUTES (Admin Only)
 // ------------------------
-// Example: Get all vendor requests
+
+// Get all vendor requests
 router.get("/vendor-requests", authAdmin, async (req, res) => {
   try {
     const requests = await VendorRequest.find().sort({ createdAt: -1 });
@@ -57,7 +61,7 @@ router.get("/vendor-requests", authAdmin, async (req, res) => {
   }
 });
 
-// Example: Approve a vendor request
+// Approve a vendor request
 router.post("/vendor-requests/:id/approve", authAdmin, async (req, res) => {
   try {
     const request = await VendorRequest.findById(req.params.id);
@@ -76,7 +80,7 @@ router.post("/vendor-requests/:id/approve", authAdmin, async (req, res) => {
   }
 });
 
-// Example: Reject a vendor request
+// Reject a vendor request
 router.post("/vendor-requests/:id/reject", authAdmin, async (req, res) => {
   try {
     const request = await VendorRequest.findById(req.params.id);

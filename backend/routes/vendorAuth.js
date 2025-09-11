@@ -1,9 +1,11 @@
+// backend/routes/vendorAuth.js
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import Vendor from "../models/Vendor.js";
 
 const router = express.Router();
+const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
 // POST /api/vendor/auth/login
 router.post("/login", async (req, res) => {
@@ -26,7 +28,7 @@ router.post("/login", async (req, res) => {
 
     const token = jwt.sign(
       { id: vendor._id, role: "vendor", email: vendor.email },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       { expiresIn: "7d" }
     );
 

@@ -1,15 +1,13 @@
-// src/pages/AdminDashboard.js
 import React from "react";
-import { Link, Routes, Route, useNavigate } from "react-router-dom";
-import VendorRequests from "./VendorManagement";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "../styles/AdminDashboard.css";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
 
   function logoutAdmin() {
-    localStorage.removeItem("admin_token"); // remove token
-    navigate("/admin/login"); // redirect to login
+    localStorage.removeItem("admin_token");
+    navigate("/admin/login");
   }
 
   return (
@@ -40,12 +38,10 @@ export default function AdminDashboard() {
             Logout
           </button>
         </header>
+
+        {/* Outlet renders child routes */}
         <section className="page-content">
-          <Routes>
-            <Route path="vendor-requests" element={<VendorRequests />} />
-            <Route path="orders" element={<div>📦 Orders Page</div>} />
-            <Route path="products" element={<div>🛍️ Products Page</div>} />
-          </Routes>
+          <Outlet />
         </section>
       </main>
     </div>

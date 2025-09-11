@@ -1,0 +1,170 @@
+/* AdminProducts.css */
+
+/* Overall page container */
+.admin-products {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+/* Heading */
+.admin-products h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Table */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Table headers */
+.products-table th {
+  background-color: rgb(83, 35, 96);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Table cells */
+.products-table td {
+  padding: 10px;
+  border-bottom: 1px solid #c9c5c5;
+  vertical-align: middle;
+  font-size: 0.95rem;
+  color: #0e0e0efc;
+  text-align: center;
+}
+
+/* Table row hover effect */
+.products-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Product image */
+.products-table img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #c9c6c6;
+}
+
+/* Input fields while editing */
+.products-table input[type="text"],
+.products-table input[type="number"] {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid #ce3a3a1a;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Buttons general */
+.products-table button {
+  padding: 5px 8px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+/* Edit button */
+.edit-btn {
+  background-color: #28a745;
+  color: #fff;
+  width: 60px;
+}
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  width: 60px;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Save button */
+.save-btn {
+  background-color: #007bff;
+  color: #fff;
+  width: 60px;
+}
+.save-btn:hover {
+  background-color: #0069d9;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background-color: #6c757d;
+  color: #fff;
+  width: 60px;
+}
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Approve button */
+.approve-btn {
+  background-color: #3cb5e9;
+  color: #fff;
+  width: 80px;
+}
+.approve-btn:hover {
+  background-color: #218838;
+}
+
+/* Reject button */
+.reject-btn {
+  background-color: #f37115;
+  color: #fff;
+  width: 80px;
+}
+.reject-btn:hover {
+  background-color: #c82333;
+}
+
+/* Status badges */
+.products-table td .status {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #fff;
+  display: inline-block;
+}
+
+.status-pending {
+  background-color: #ffc107;
+}
+
+.status-approved {
+  background-color: #28a745;
+}
+
+.status-rejected {
+  background-color: #dc3545;
+}
+
+/* No products message */
+.no-products {
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: #666;
+}

@@ -102,7 +102,7 @@ export default function CategoryPage() {
           subcategorySlug: subcategory, // ✅ match backend slug
           sort: sortOption,
           page,
-          limit,
+          limit : 6,
         };
 
         if (filters.gender.length) params.gender = filters.gender.join(",");

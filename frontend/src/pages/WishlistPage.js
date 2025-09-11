@@ -93,7 +93,8 @@ export default function WishlistPage() {
   src={item.img || item.image || item.images?.[0]}
   alt={item.title}
   className="wishlist-img"
-  onClick={() => navigate(`/product/${item.productCode || item.id}`)} // use business ID
+    onClick={() => navigate(`/product/${item.productId}`)}
+
 />
 
                 {item.stock === 0 && (

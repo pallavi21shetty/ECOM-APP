@@ -1,6 +1,6 @@
 import express from "express";
 import User from "../models/User.js";
-import { authMiddleware } from "../middleware/auth.js";
+import { authMiddleware, generateToken } from "../middleware/auth.js";
 import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey"; // put in .env for production
@@ -167,11 +167,7 @@ router.post("/verify-otp", async (req, res) => {
     await user.save();
 
     // 🔑 Generate JWT token
-    const token = jwt.sign(
-      { id: user._id, mobile: user.mobile, role: user.role },
-      JWT_SECRET,
-      { expiresIn: "1h" }
-    );
+const token = generateToken(user);
 
   //console.log("Generated JWT:", token); 
 
@@ -180,7 +176,7 @@ router.post("/verify-otp", async (req, res) => {
       message: "Successfully verified & logged in",
       token,
       user: {
-        id: user._id,
+         id: user._id.toString(),
         name: user.name,
         email: user.email,
         mobile: user.mobile,
