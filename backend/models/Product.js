@@ -55,7 +55,7 @@ const ProductSchema = new mongoose.Schema(
     },
 
     // Vendor system
-    vendor: { type: mongoose.Schema.Types.ObjectId, ref: "Vendor" },
+    vendor: { type: mongoose.Schema.Types.ObjectId, ref: "Vendor"}, // vendor = User with role=vendor
     status: {
       type: String,
       enum: ["pending", "approved", "rejected"],

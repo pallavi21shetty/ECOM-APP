@@ -16,6 +16,7 @@ import vendorProductRoutes from "./routes/vendorProductRoutes.js"; // vendor pro
 import adminAuthRoutes from "./routes/adminAuth.js";         // admin login
 import adminVendorRoutes from "./routes/adminVendor.js";     // admin vendor management
 import adminProductRoutes from "./routes/adminProductRoutes.js";  // admin products
+import paymentsRoutes from "./routes/payments.js";         // payments
 
 dotenv.config();
 const app = express();
@@ -47,7 +48,8 @@ app.use("/api/vendor/products", vendorProductRoutes);  // vendor products manage
 // Admin routes
 app.use("/api/admin/auth", adminAuthRoutes);           // admin login
 app.use("/api/admin/products", adminProductRoutes);    // admin products management
-app.use("/api/admin", adminVendorRoutes);              // vendor requests & management
+app.use("/api/admin", adminVendorRoutes);       
+app.use("/api/payments", paymentsRoutes);       // payment routes
 
 
 // ---------- Default Route ----------

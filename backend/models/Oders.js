@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const orderItemSchema = new mongoose.Schema({
   product: { type: mongoose.Schema.Types.ObjectId, ref: "Product", required: true },
-  vendor: { type: mongoose.Schema.Types.ObjectId, ref: "Vendor", required: true }, // vendor = User with role=vendor
+  vendor: { type: mongoose.Schema.Types.ObjectId, ref: "Vendor", required: false, null: true }, // vendor = User with role=vendor
   quantity: { type: Number, default: 1 },
   price: { type: Number, required: true }, // snapshot price
   status: {

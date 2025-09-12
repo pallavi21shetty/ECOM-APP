@@ -41,6 +41,7 @@ import PaymentPage from "./pages/PaymentPage";     // ✅ NEW (create placeholde
 
 // Scroll components
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import OrderDetails from "./pages/OrderDetails";
 
 // ✅ Auto scroll to top on route change
 function ScrollToTop() {
@@ -105,6 +106,8 @@ function Layout() {
         {/* Checkout flow */}
         <Route path="/checkout" element={<ShippingPage />} />   {/* ✅ Shipping page */}
         <Route path="/payment" element={<PaymentPage />} />     {/* ✅ Payment page */}
+        {/* <Route path="/payment" element={<PaymentPage />} /> */}
+        <Route path="/orders/:id" element={<OrderDetails />} />
       </Routes>
 
       <ScrollToTopButton />

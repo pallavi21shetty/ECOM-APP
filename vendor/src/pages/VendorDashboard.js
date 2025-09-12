@@ -34,7 +34,7 @@ export default function VendorDashboard({ vendor, onLogout }) {
           <h1>Welcome, {vendor.name}</h1>
         </header>
         <section className="page-content">
-          <p> Manage your shop by selecting an option from the sidebar.</p>
+          <p> "Welcome aboard! We're excited to have you with us and look forward to a long and successful partnership".</p>
         </section>
       </main>
     </div>

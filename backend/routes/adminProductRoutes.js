@@ -7,7 +7,7 @@ const router = express.Router();
 // GET all products (admin)
 router.get("/", authAdmin, async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find().sort({ createdAt: -1 });
     res.status(200).json(products);
   } catch (err) {
     console.error(err);

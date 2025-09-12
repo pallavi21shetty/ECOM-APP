@@ -121,6 +121,7 @@ export default function ShippingPage() {
   });
 
   // ✅ Handle Proceed to Payment
+  // TODO: make razorpay payment gateway integration
   function handleProceed() {
     if (!locationAllowed) return;
     navigate("/payment", {
