@@ -86,7 +86,7 @@ export default function Navbar() {
           {user ? (
             <>
               <span className="profile-link">Hi, {user.name || "User"}</span>
-              <Link to="/profile">My Account</Link>
+              <Link to="/account/orders">My Account</Link>
               <button
                 className="signout-btn"
                 onClick={() => {

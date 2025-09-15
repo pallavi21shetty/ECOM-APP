@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom"; // ✅ for pagination only
 import "../styles/Products.css";
 
 export default function Products() {
@@ -19,32 +20,51 @@ export default function Products() {
     image: "",
   });
 
-  // Pagination states
-  const [currentPage, setCurrentPage] = useState(1);
+  // ✅ Pagination
+  const [searchParams, setSearchParams] = useSearchParams();
   const itemsPerPage = 25;
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(searchParams.get("page")) || 1
+  );
+
+  // ✅ Filters (not persisted in URL)
+  const [searchTerm, setSearchTerm] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [minStock, setMinStock] = useState("");
+  const [maxStock, setMaxStock] = useState("");
+  const [status, setStatus] = useState("");
 
   // Fetch products
- useEffect(() => {
-  const fetchProducts = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/api/admin/products`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await res.json();
-      if (res.ok) {
-        // sort newest first (assuming createdAt is present)
-        const sorted = [...data].sort(
-          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-        );
-        setProducts(sorted);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/api/admin/products`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const data = await res.json();
+        if (res.ok) {
+          const sorted = [...data].sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+          setProducts(sorted);
+        }
+      } catch {
+        console.error("Error fetching products");
       }
-    } catch {
-      console.error("Error fetching products");
-    }
-  };
+    };
 
-  fetchProducts();
-}, [token, API_BASE]);
+    fetchProducts();
+  }, [token, API_BASE]);
+
+  // ✅ Sync pagination with URL
+  useEffect(() => {
+    if (currentPage > 1) {
+      setSearchParams({ page: currentPage });
+    } else {
+      setSearchParams({});
+    }
+  }, [currentPage, setSearchParams]);
 
   // Delete product
   const deleteProduct = async (id) => {
@@ -138,9 +158,29 @@ export default function Products() {
     }
   };
 
-  // Pagination logic
-  const totalPages = Math.ceil(products.length / itemsPerPage);
-  const paginatedProducts = products.slice(
+  // ✅ Apply filters
+  const filteredProducts = products.filter((p) => {
+    const matchesSearch =
+      !searchTerm ||
+      p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.brand.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesPrice =
+      (!minPrice || p.price >= Number(minPrice)) &&
+      (!maxPrice || p.price <= Number(maxPrice));
+
+    const matchesStock =
+      (!minStock || p.stock >= Number(minStock)) &&
+      (!maxStock || p.stock <= Number(maxStock));
+
+    const matchesStatus = !status || p.status === status;
+
+    return matchesSearch && matchesPrice && matchesStock && matchesStatus;
+  });
+
+  // ✅ Pagination logic (after filtering)
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -148,7 +188,56 @@ export default function Products() {
   return (
     <div className="admin-products">
       <h2>Products</h2>
-      {products.length === 0 ? (
+
+      {/* ✅ Filter Controls */}
+      <div className="filters">
+        <input
+          type="text"
+          placeholder="Search by title or brand"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Min Price"
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Max Price"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Min Stock"
+          value={minStock}
+          onChange={(e) => setMinStock(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Max Stock"
+          value={maxStock}
+          onChange={(e) => setMaxStock(e.target.value)}
+        />
+        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+          <option value="">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+        <button onClick={() => {
+          setSearchTerm("");
+          setMinPrice("");
+          setMaxPrice("");
+          setMinStock("");
+          setMaxStock("");
+          setStatus("");
+        }}>Reset</button>
+      </div>
+
+      {filteredProducts.length === 0 ? (
         <div className="no-products">No products</div>
       ) : (
         <>

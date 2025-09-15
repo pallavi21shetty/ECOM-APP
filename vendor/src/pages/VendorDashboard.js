@@ -1,6 +1,7 @@
+// src/pages/VendorDashboard.jsx
 import React from "react";
-import { Link } from "react-router-dom";
-import { Package, ShoppingCart, LogOut } from "lucide-react"; // ✅ nice icons
+import { Link, Outlet } from "react-router-dom";
+import { Package, ShoppingCart, LogOut } from "lucide-react";
 import "../styles/VendorDashboard.css";
 
 export default function VendorDashboard({ vendor, onLogout }) {
@@ -11,6 +12,9 @@ export default function VendorDashboard({ vendor, onLogout }) {
         <h2 className="logo">🛍️ Vendor Panel</h2>
         <nav>
           <ul>
+            <li>
+              <Link to="/vendor/dashboard">Dashboard</Link>
+            </li>
             <li>
               <Link to="/vendor/products">
                 <Package className="icon" /> Products
@@ -34,7 +38,7 @@ export default function VendorDashboard({ vendor, onLogout }) {
           <h1>Welcome, {vendor.name}</h1>
         </header>
         <section className="page-content">
-          <p> "Welcome aboard! We're excited to have you with us and look forward to a long and successful partnership".</p>
+          <Outlet /> {/* Nested pages render here */}
         </section>
       </main>
     </div>

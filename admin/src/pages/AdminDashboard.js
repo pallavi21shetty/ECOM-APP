@@ -41,8 +41,6 @@ export default function AdminDashboard() {
            {/* Main Content */}
         {/* Outlet renders child routes */}
         <section className="page-content">
-          <h1>Welcome</h1>
-          <p> "Welcome aboard! We're excited to have you with us and look forward to a long and successful partnership".</p>
           <Outlet />
         </section>
       </main>

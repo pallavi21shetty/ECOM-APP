@@ -53,11 +53,12 @@ export const vendorMiddleware = (req, res, next) => {
  * Middleware to allow only admins
  */
 export const adminMiddleware = (req, res, next) => {
-  if (req.user && req.user.id === "admin") {
+  if (req.user && req.user.role === "admin") {
     return next();
   }
   return res.status(403).json({ message: "Forbidden: Admins only" });
 };
+
 
 /**
  * Utility function to generate JWT token

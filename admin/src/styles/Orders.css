@@ -1,0 +1,361 @@
+/* Orders.css */
+
+/* Layout */
+.admin-orders {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-orders h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Order Card */
+.order-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.order-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.status-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Status colors */
+.status-badge.placed {
+  background-color: #3498db;
+}
+.status-badge.processing {
+  background-color: #9b59b6;
+}
+.status-badge.shipped {
+  background-color: #f39c12;
+}
+.status-badge.delivered {
+  background-color: #27ae60;
+}
+.status-badge.cancelled {
+  background-color: #e74c3c;
+}
+
+/* Items List */
+.items {
+  margin-top: 1rem;
+}
+
+.items-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 0.7rem;
+  flex: 1 1 220px;
+  gap: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.item-card:hover {
+  background: #f0f7ff;
+}
+
+.item-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-title {
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.3rem 0;
+}
+
+.item-details p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Status dropdown */
+.order-status-edit {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.order-status-edit label {
+  font-weight: 600;
+  color: #444;
+}
+
+.order-status-edit select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.order-status-edit select:hover {
+  border-color: #888;
+}
+
+/* Loading & No Orders */
+.loading,
+.no-orders {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* Status button (optional) */
+.status-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.status-btn:hover {
+  background-color: #2980b9;
+}
+
+/* ✅ Admin Notification Styles */
+.admin-notification {
+  padding: 12px 18px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Success & Error variants */
+.admin-notification.success {
+  background-color: #e6f9f0;
+  border: 1px solid #2ecc71;
+  color: #27ae60;
+}
+
+.admin-notification.error {
+  background-color: #ffeaea;
+  border: 1px solid #e74c3c;
+  color: #c0392b;
+}
+
+/* Vendor request block inside admin orders */
+.vendor-notifications {
+  background: #fafafa;
+  border-left: 4px solid #3498db;
+  margin: 15px 0;
+  padding: 12px 15px;
+  border-radius: 6px;
+}
+
+.vendor-notifications strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #2c3e50;
+}
+
+.vendor-notification-item {
+  background: #f1f8ff;
+  border: 1px solid #d6eaff;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #2c3e50;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
+/* Search Bar */
+.search-bar {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 40%;
+  padding: 10px 14px;
+  border: 1px solid #201e1e;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+
+
+
+
+
+/* ✅ Order Counts Section */
+.order-counts {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 20px 0 30px;
+  flex-wrap: wrap;
+}
+
+.order-count {
+  padding: 14px 22px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 120px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  user-select: none;
+  opacity: 0.9;
+}
+
+.order-count:hover {
+  transform: translateY(-5px) scale(1.05);
+  opacity: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ✅ Active filter style */
+.order-count.active {
+  border: 3px solid #fff;
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
+}
+
+/* 🎨 Different colors for each status */
+.order-count.total {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+}
+.order-count.placed {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+.order-count.processing {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+.order-count.shipped {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+.order-count.delivered {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+}
+.order-count.cancelled {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.pagination button.active {
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #e0e0e0;
+}
+
+
+
+/* Small fade in for messages */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+

@@ -18,6 +18,7 @@ function App() {
 
         {/* Dashboard wrapper */}
         <Route path="/admin/dashboard" element={<AdminDashboard />}>
+        <Route index element={<h2>Welcome Admin! Select a section from the sidebar.</h2>} />
           <Route path="vendor-requests" element={<VendorRequests />} />
            <Route path="orders" element={<Orders />} />        {/* ✅ using Orders.js */}
           <Route path="products" element={<Products />} />    {/* ✅ using Products.js */}

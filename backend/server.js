@@ -8,6 +8,7 @@ import authRoutes from "./routes/authRoutes.js";             // customer auth
 import productRoutes from "./routes/productRoutes.js";       // products (customer)
 import wishlistRoutes from "./routes/wishlist.js";           // wishlist
 import cartRoutes from "./routes/cart.js";                   // cart
+import orderRoutes from "./routes/orderRoutes.js";
 
 import vendorAuthRoutes from "./routes/vendorAuth.js";       // vendor login
 import vendorRequestRoutes from "./routes/vendorRequests.js";// vendor signup (request)
@@ -39,6 +40,7 @@ app.use("/api/auth", authRoutes);             // user authentication
 app.use("/api/products", productRoutes);      // customer products
 app.use("/api/wishlist", wishlistRoutes);     // wishlist
 app.use("/api/cart", cartRoutes);             // cart
+app.use("/api/orders", orderRoutes);
 
 // Vendor routes
 app.use("/api/vendor/auth", vendorAuthRoutes);          // vendor login

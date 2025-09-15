@@ -1,0 +1,244 @@
+/* ✅ Vendor Orders Container */
+.vendor-orders-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.vendor-orders-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ✅ Search Bar */
+.search-bar {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 40%;
+  padding: 10px 14px;
+  border: 1px solid #201e1e;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+
+/* ✅ Order Counts Section */
+.order-counts {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 20px 0 30px;
+  flex-wrap: wrap;
+}
+
+.count-card {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 120px;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.count-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+/* ✅ Active card (when selected) */
+.count-card.active {
+  border: 2px solid #fff;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  transform: scale(1.05);
+}
+
+.count-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.count-card p {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* 🎨 Different colors for each status */
+.count-card.all {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+}
+.count-card.placed {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+.count-card.processing {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+.count-card.shipped {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+.count-card.cancelled {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* ✅ Vendor Order Card */
+.vendor-order-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vendor-order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.order-header {
+  margin-bottom: 1rem;
+}
+
+.order-header h4 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+/* ✅ Order Items */
+.order-items {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.order-item:hover {
+  background: #f0f7ff;
+}
+
+.order-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.order-item-details h4 {
+  margin: 0 0 0.3rem 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.order-item-details p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ✅ Vendor Notification (per item) */
+.vendor-notification {
+  padding: 8px 12px;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.vendor-notification.success {
+  background-color: #e6f9f0;
+  border: 1px solid #2ecc71;
+  color: #27ae60;
+}
+
+.vendor-notification.error {
+  background-color: #ffeaea;
+  border: 1px solid #e74c3c;
+  color: #c0392b;
+}
+
+/* ✅ Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ecf0f1;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 40px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pagination button.active {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+.pagination button:disabled {
+  background: #bdc3c7;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+/* ✅ Fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

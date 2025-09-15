@@ -1,0 +1,288 @@
+.my-orders-container {
+  display: flex;
+  gap: 1.5rem;
+  font-family: Arial, sans-serif;
+  padding-top: 120px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.my-orders-sidebar {
+  width: 220px;
+  padding: 1rem;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+
+.my-orders-sidebar h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.my-orders-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.my-orders-sidebar li {
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.my-orders-sidebar li.active {
+  font-weight: bold;
+  color: #0275d8;
+}
+
+/* Main Content */
+.my-orders-content {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-orders-content h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* No Orders */
+.no-orders {
+  text-align: center;
+  padding: 40px 0;
+  color: #777;
+}
+
+.wishlist-suggestion {
+  margin-top: 15px;
+}
+
+.wishlist-btn {
+  background: #e53935;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  background: #c62828;
+}
+
+/* Orders List */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Order Card */
+.order-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fafafa;
+  transition: box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.order-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.order-header h4 {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.order-header p {
+  font-size: 13px;
+  color: #666;
+  margin: 2px 0;
+}
+
+/* Order Items */
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-item-img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.order-item-details {
+  flex: 1;
+}
+
+.order-item-details h4 {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.order-item-details p {
+  font-size: 13px;
+  color: #555;
+  margin: 2px 0;
+}
+
+/* Item-level progress bar */
+.item-progress-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.item-progress-bar .progress-step {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  background: #eee;
+  margin: 0 3px;
+  border-radius: 4px;
+  font-size: 11px;
+  transition: all 0.3s ease;
+}
+
+.item-progress-bar .progress-step.active {
+  background: #4caf50;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Order Actions */
+.order-actions {
+  margin-top: 10px;
+}
+
+.track-order-btn {
+  background: #0275d8;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+
+.track-order-btn:hover {
+  background: #025aa5;
+}
+
+/* Tracking Modal */
+.tracking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tracking-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tracking-item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.tracking-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tracking-item-header img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Horizontal Progress Bar */
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  background: #eee;
+  margin: 0 3px;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background: #4caf50;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* History */
+.tracking-history {
+  list-style: none;
+  padding-left: 15px;
+  font-size: 12px;
+  color: #555;
+}
+
+.tracking-history li {
+  margin-bottom: 3px;
+}

@@ -16,6 +16,54 @@
   text-align: center;
 }
 
+/* 🔍 Filters container */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs & Selects inside filters */
+.filters input,
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: rgb(83, 35, 96);
+  box-shadow: 0 0 5px rgba(83, 35, 96, 0.4);
+}
+
+/* Reset button */
+.filters button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #d32f2f;
+}
+
 /* Table */
 .products-table {
   width: 100%;
@@ -167,4 +215,37 @@
   padding: 20px;
   font-size: 1rem;
   color: #666;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: rgb(83, 35, 96);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #5a2270;
+}
+
+.pagination button:disabled {
+  background-color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 0.95rem;
+  color: #333;
 }

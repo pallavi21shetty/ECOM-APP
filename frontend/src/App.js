@@ -27,6 +27,7 @@ import WishlistPage from "./pages/WishlistPage";
 import CheckoutSteps from "./components/CheckoutSteps";
 import HomePage from "./pages/Home";
 import SearchResults from "./pages/SearchResults"; 
+import MyOrdersPage from "./pages/MyOrdersPage";
 
 // Category landing pages
 import MenPage from "./pages/Men";
@@ -80,6 +81,8 @@ function Layout() {
 
         {/* ✅ Search */}
         <Route path="/search" element={<SearchResults />} />
+
+        <Route path="/account/orders" element={<MyOrdersPage />} />
 
         {/* Category main routes */}
         <Route path="/men" element={<MenPage />} />
