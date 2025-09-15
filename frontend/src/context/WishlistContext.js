@@ -100,7 +100,7 @@ setWishlist((prev) => {
       if (res.data?.wishlist) {
         setWishlist(normalizeProducts(res.data.wishlist));
       }
-      showMessage("Added to wishlist ✅");
+      showMessage("Added to wishlist ");
     } catch (err) {
       console.error("Error adding to wishlist:", err);
       showMessage("Failed to add wishlist. Try again.");
@@ -133,7 +133,7 @@ setWishlist((prev) => {
       if (res.data?.wishlist) {
         setWishlist(normalizeProducts(res.data.wishlist));
       }
-      showMessage("Removed from wishlist ✅");
+      showMessage("Removed from wishlist ");
     } catch (err) {
       console.error("Error removing from wishlist:", err);
       showMessage("Failed to remove wishlist. Try again.");

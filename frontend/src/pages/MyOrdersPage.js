@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/MyOrdersPage.css";
+import AccountSidebar from "../components/AccountSidebar"; 
 
 export default function MyOrdersPage() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [trackingOrder, setTrackingOrder] = useState(null);
   const [trackingLoading, setTrackingLoading] = useState(false);
-
   const statusFlow = ["placed", "processing", "shipped", "delivered", "cancelled"];
+
+
 
   // Fetch user's orders
   const fetchOrders = async () => {
@@ -55,23 +57,7 @@ export default function MyOrdersPage() {
 
   return (
     <div className="my-orders-container">
-      <aside className="my-orders-sidebar">
-        <h3>My Account</h3>
-        <ul>
-          <li className="active">Orders</li>
-          <li>AJIO Wallet</li>
-          <li>Invite Friends</li>
-          <li>My Rewards</li>
-          <li>Customer Care</li>
-        </ul>
-        <h3>Profile</h3>
-        <ul>
-          <li>Personal Information</li>
-          <li>Address Book</li>
-          <li>Payments</li>
-        </ul>
-      </aside>
-
+     < AccountSidebar/>
       <main className="my-orders-content">
         <h2>My Orders</h2>
 

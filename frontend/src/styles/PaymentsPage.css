@@ -1,0 +1,62 @@
+.payments-content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  margin-left: 20px;
+  padding-top: 150px;
+}
+
+.payments-content h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.payments-content p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.payments-section {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.card-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  background: #fafafa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card-item p {
+  margin: 4px 0;
+}
+
+.card-item button {
+  margin-top: 10px;
+  background: #eee;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card-item button:hover {
+  background: #ccc;
+}
+
+.no-cards {
+  color: #777;
+  font-style: italic;
+  margin-top: 10px;
+}

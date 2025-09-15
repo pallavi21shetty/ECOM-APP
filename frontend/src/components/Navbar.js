@@ -100,7 +100,7 @@ export default function Navbar() {
           ) : (
             <Link to="/signin">Sign In / Join AJIO</Link>
           )}
-          <Link to="#">Customer Care</Link>
+          <Link to="https://www.ajio.com/selfcare">Customer Care</Link>
           <button className="ajio-luxe">Visit AJIOLUXE</button>
         </div>
 

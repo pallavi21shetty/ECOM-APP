@@ -2,37 +2,59 @@
   display: flex;
   gap: 1.5rem;
   font-family: Arial, sans-serif;
-  padding-top: 120px;
+  padding-top: 140px;
   width: 80%;
   margin: 0 auto;
 }
 
 /* Sidebar */
 .my-orders-sidebar {
-  width: 220px;
-  padding: 1rem;
-  background: #f4f4f4;
-  border-radius: 8px;
+  width: 240px;
+  padding: 20px;
+  background: #fff;
+  border-right: 1px solid #e6e6e6;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .my-orders-sidebar h3 {
-  margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .my-orders-sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .my-orders-sidebar li {
-  margin: 0.5rem 0;
-  cursor: pointer;
+  margin-bottom: 8px;
 }
 
-.my-orders-sidebar li.active {
-  font-weight: bold;
-  color: #0275d8;
+.my-orders-sidebar li a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.my-orders-sidebar li a:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.my-orders-sidebar li.active a {
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
 }
 
 /* Main Content */

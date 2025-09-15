@@ -88,7 +88,7 @@ export function CartProvider({ children }) {
       );
 
       setCart(res.data.cart || []);
-      showMessage("Added to cart ✅");
+      showMessage("Added to cart ");
     } catch (err) {
       console.error("Error adding to cart:", err);
       showMessage("Failed to add to cart. Try again.");
@@ -112,7 +112,7 @@ export function CartProvider({ children }) {
       });
 
       setCart(res.data.cart || []);
-      showMessage("Removed from cart ✅");
+      showMessage("Removed from cart ");
     } catch (err) {
       console.error(err);
       showMessage("Failed to remove from cart. Try again.");

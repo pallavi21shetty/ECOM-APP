@@ -312,3 +312,13 @@
 .wishlist-add-btn:hover {
   background: #f7f7f7;
 }
+
+
+.cart-message {
+    background-color: #0c031ff3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}

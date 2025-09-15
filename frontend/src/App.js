@@ -26,7 +26,7 @@ import CartPage from "./pages/CartPage";
 import WishlistPage from "./pages/WishlistPage";
 import CheckoutSteps from "./components/CheckoutSteps";
 import HomePage from "./pages/Home";
-import SearchResults from "./pages/SearchResults"; 
+import SearchResults from "./pages/SearchResults";
 import MyOrdersPage from "./pages/MyOrdersPage";
 
 // Category landing pages
@@ -37,12 +37,20 @@ import BeautyPage from "./pages/Beauty";
 import HomeKitchenPage from "./pages/HomeKitchen";
 
 // Checkout flow pages
-import ShippingPage from "./pages/ShippingPage";   // ✅ NEW
-import PaymentPage from "./pages/PaymentPage";     // ✅ NEW (create placeholder)
+import ShippingPage from "./pages/ShippingPage";
+import PaymentPage from "./pages/PaymentPage";
 
 // Scroll components
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import OrderDetails from "./pages/OrderDetails";
+
+// ✅ Account pages
+import WalletPage from "./pages/WalletPage";
+import InvitePage from "./pages/InvitePage";
+import RewardsPage from "./pages/RewardsPage";
+import ProfilePage from "./pages/ProfilePage";
+import AddressPage from "./pages/AddressPage";
+import PaymentsPage from "./pages/PaymentsPage";
 
 // ✅ Auto scroll to top on route change
 function ScrollToTop() {
@@ -82,7 +90,14 @@ function Layout() {
         {/* ✅ Search */}
         <Route path="/search" element={<SearchResults />} />
 
+        {/* ✅ Account routes */}
         <Route path="/account/orders" element={<MyOrdersPage />} />
+        <Route path="/account/wallet" element={<WalletPage />} />
+        <Route path="/account/invite" element={<InvitePage />} />
+        <Route path="/account/rewards" element={<RewardsPage />} />
+        <Route path="/account/profile" element={<ProfilePage />} />
+        <Route path="/account/address" element={<AddressPage />} />
+        <Route path="/account/payments" element={<PaymentsPage />} />
 
         {/* Category main routes */}
         <Route path="/men" element={<MenPage />} />
@@ -107,9 +122,8 @@ function Layout() {
         <Route path="/product/:id" element={<ProductDetails />} />
 
         {/* Checkout flow */}
-        <Route path="/checkout" element={<ShippingPage />} />   {/* ✅ Shipping page */}
-        <Route path="/payment" element={<PaymentPage />} />     {/* ✅ Payment page */}
-        {/* <Route path="/payment" element={<PaymentPage />} /> */}
+        <Route path="/checkout" element={<ShippingPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
         <Route path="/orders/:id" element={<OrderDetails />} />
       </Routes>
 

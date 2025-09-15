@@ -1,0 +1,96 @@
+.account-page-container {
+  display: flex;
+  padding: 20px;
+  background: #fafafa;
+  padding-top: 140px;
+}
+
+.address-content {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.address-content h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.address-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.address-card {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.address-card h4 {
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #f3f3f3;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin: 5px 5px 10px 0;
+}
+
+.default-tag {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.address-actions {
+  margin-top: 10px;
+}
+
+.address-actions button {
+  margin-right: 10px;
+  background: #eee;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.address-actions button:hover {
+  background: #ccc;
+}
+
+.add-address-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #aaa;
+  border-radius: 6px;
+  color: #666;
+  font-weight: bold;
+  cursor: pointer;
+  background: #fff;
+}
+
+
+.no-address {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  grid-column: 1 / -1;
+}
