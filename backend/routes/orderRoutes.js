@@ -102,6 +102,99 @@ router.get("/track/:id", authMiddleware, async (req, res) => {
   }
 });
 
+
+// Cancel item (allowed in placed or processing state)
+router.put("/cancel/:orderId/:itemId", authMiddleware, async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.orderId);
+    const item = order.items.id(req.params.itemId);
+
+    if (!item) return res.status(404).json({ message: "Item not found" });
+    if (!["placed", "processing"].includes(item.status)) {
+      return res.status(400).json({ message: "Cannot cancel this item now" });
+    }
+
+    item.status = "cancelled";
+    item.history.push({
+      status: "cancelled",
+      changedAt: new Date(),
+      changedBy: req.user.username,
+    });
+
+    await order.save();
+    res.json({ message: "Item cancelled successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+// Return item with reason
+// Return item with reason
+router.put("/return/:orderId/:itemId", authMiddleware, async (req, res) => {
+  try {
+    const { reason } = req.body;
+
+    // Check if reason was sent
+    if (!reason || !reason.trim()) {
+      return res.status(400).json({ message: "Return reason is required" });
+    }
+
+    // Find the order
+    const order = await Order.findById(req.params.orderId);
+    if (!order) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
+    // Find the item inside the order
+    const item = order.items.id(req.params.itemId);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found in this order" });
+    }
+
+    // Check if item is eligible for return
+    if (item.status !== "delivered") {
+      return res
+        .status(400)
+        .json({ message: "Only delivered items can be returned" });
+    }
+
+    // Ensure user is available
+    if (!req.user || !req.user.username) {
+      return res
+        .status(401)
+        .json({ message: "Unauthorized: user info missing" });
+    }
+
+    // // Update item status and push history
+    // item.status = "returned";
+    // item.returnReason = reason;
+    // item.history.push({
+    //   status: "returned",
+    //   reason,
+    //   changedAt: new Date(),
+    //   changedBy: req.user.username,
+    // });
+
+    await order.save();
+
+    res.json({
+      message: "Item returned successfully. Refund will be initiated shortly.",
+      item,
+    });
+  } catch (err) {
+    console.error("❌ Return error:", err.message);
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+});
+
+
+
+
+
+
+
+
+
 // ============================
 // 🔴 ADMIN ROUTES
 // ============================

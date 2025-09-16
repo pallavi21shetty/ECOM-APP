@@ -82,7 +82,7 @@ export async function createOrder(req, res) {
       paymentMethod: "razorpay",
       transactionId: null,
       razorpayOrderId: rOrder.id,
-      orderStatus: "not placed",
+      orderStatus: "placed",
       history: [{ status: "created", changedBy: "system" }],
       meta: { receipt: options.receipt },
     });
