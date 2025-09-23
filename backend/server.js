@@ -33,6 +33,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(express.json()); // parse JSON bodies
 
 // ---------- MongoDB Connection ----------

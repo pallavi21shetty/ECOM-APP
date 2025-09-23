@@ -76,6 +76,7 @@ export default function PaymentPage() {
       });
 
       if (!resp.ok) {
+        console.log(resp);
         const txt = await resp.text();
         throw new Error(`Create order failed: ${resp.status} ${txt}`);
       }
